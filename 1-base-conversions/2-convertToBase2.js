@@ -3,8 +3,19 @@
 /******************************************************************************/
 
 const convertToBase2 = element => {
-  // Your code here 
+  // need an if statement to check if its a regular decimal or a hex
+    // if it is hex then it will have 0x in front of it. and we need to convert it to decimal
+    // once it is decimal we we have to do decimal num to string with a arg of 2.
+    if (typeof element === 'string') {
+      element = toDecimal(element);
+    }
+    
+    return '0b'.concat() + element.toString(2);
+      
+    
 };
+
+const toDecimal = element => parseInt(element.slice(2), 16);
 
 /******************************************************************************/
 
