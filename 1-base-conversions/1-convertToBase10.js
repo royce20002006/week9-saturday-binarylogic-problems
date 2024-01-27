@@ -3,7 +3,14 @@
 /******************************************************************************/
 
 const convertToBase10 = str => {
-  // Your code here 
+  // use a if statement to check if its binary or hex
+    //binary always has a b at index 1
+    // hex always has a x at index 1
+      // then we return parseInt with a slice of 2 to get rid of the first two numbers
+      // we then put what we are changing it from so binary is 2 and hex is 16.
+  if (str[1] === 'b') return parseInt(str.slice(2), 2);
+  if(str[1] === 'x') return parseInt(str.slice(2), 16);
+  
 };
 
 /******************************************************************************/
