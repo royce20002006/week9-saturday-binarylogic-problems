@@ -3,9 +3,17 @@
 /******************************************************************************/
 
 const convertToBase16 = element => {
-  // Your code here 
+  //if the element is base two need to make it a regular decimal so do that by checking if string
+    // after checking if string use parseInt with two logics the element sliced at 2 and what base it is coming from
+  // then you will use to string with the parameter 16 to get it to the base 16.
+
+  if (typeof element === 'string') element = toBinary(element)
+
+  return '0x'.concat(element.toString(16));
 };
 
+
+const toBinary = element => parseInt(element.slice(2), 2);
 /******************************************************************************/
 
 console.log(convertToBase16(4)); // 0x4
