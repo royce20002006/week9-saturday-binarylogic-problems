@@ -11,18 +11,26 @@ const binaryStringToArray = str => {
   for (let i = 0; i < str.length; i++) {
     binary8bitStr += str[i];
     count++;
-
     if (count % 8 === 0) {
       if (!str[i + 1]) break;
       binary8bitStr += ',';
     }
   }
-
   return binary8bitStr.split(',');
 };
-
+// get the binary code by passing in the string to the helper function
+  // then set a empty string as a variable
+    // loop through the arr and add it to the string variable by using from char code and passing in parseInt to turn it into decimal
+//return the string.
 const binaryToAscii = str => {
-  // Your code here 
+  let arr = binaryStringToArray(str);
+  let changed = '';
+  for (let i = 0; i < arr.length; i++) {
+    let el = arr[i];
+    changed += String.fromCharCode(parseInt(el, 2));
+    
+  }
+  return changed;
 };
 
 /******************************************************************************/
