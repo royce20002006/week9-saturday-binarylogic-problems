@@ -7,12 +7,24 @@ const addZeros = require('../utils/addZeros');
 /******************************************************************************/
 
 const asciiTo8bit = str => {
-  // Your code here 
+  // for changing ascii to 8 bit first you need to make a empty string var
+    // then you need to loop through all the characters 
+    // first you change it to a decimal
+    // then you will have to add more zeros by using a helper function.
+    
+  let chars = '';
+  for (let i = 0; i < str.length; i++) {
+     decimal = str.charCodeAt(i);
+     chars += addZeros(decimal.toString(2), 8)
+  }
+  
+  return chars;
 };
 
 /******************************************************************************/
 
 console.log(asciiTo8bit('123'));
+// 001100010011001000110011
 // 001100010011001000110011
 
 console.log(asciiTo8bit('ABC'));
